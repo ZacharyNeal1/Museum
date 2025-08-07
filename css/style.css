@@ -16,15 +16,15 @@ body {
 
 /* Home background image */
 .home-bg {
-  background: url('../images/bg.png') center/cover fixed no-repeat;
+  background: url("../images/bg.png") center/cover fixed no-repeat;
 }
 
 .collections-bg {
-  background: url('../images/collectionsbg.png') center/cover fixed no-repeat;
+  background: url("../images/collectionsbg.png") center/cover fixed no-repeat;
 }
 
 .staff-bg {
-  background: url('../images/staffbg.png') center/cover fixed no-repeat;
+  background: url("../images/staffbg.png") center/cover fixed no-repeat;
 }
 
 header {
