@@ -2,71 +2,187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="author" content="Zachary Neal" />
   <meta name="generator" content="Generated in part with AI assistance for educational purposes." />
   <title>Collections – The Echoes Archive</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/collectionStyle.css" />
 </head>
 <body class="collections-bg">
   <header>
     <h1>The Echoes Archive</h1>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main navigation">
       <a href="../index.html">Home</a>
       <a href="staff.html">Staff</a>
-      <a href="collections.html">Collections</a>
+      <a href="collections.html" aria-current="page">Collections</a>
     </nav>
   </header>
 
-  <main class="collections-layout">
-    <nav class="sub-nav">
-      <a href="#archaeology">Archaeology</a>
-      <a href="#anthropology">Anthropology</a>
-      <a href="#histories">Histories</a>
+  <main class="collections-layout" role="main">
+    <nav class="sub-nav" aria-label="Collections category navigation">
+      <button id="btn-arch" class="active" aria-controls="archaeology" aria-expanded="true" onclick="showSection('archaeology', this)">Archaeology</button>
+      <button id="btn-anthro" aria-controls="anthropology" aria-expanded="false" onclick="showSection('anthropology', this)">Anthropology</button>
+      <button id="btn-hist" aria-controls="histories" aria-expanded="false" onclick="showSection('histories', this)">Histories</button>
     </nav>
 
-    <section id="archaeology">
-      <h2>Artifacts (Archaeology)</h2>
-      <div class="artifact-card">
-        <img src="../images/stoneofelgaia.png" alt="Cradle Stone of Elgaia" />
-        <h3>Cradle Stone of Elgaia</h3>
-        <p>
-          A luminescent slab etched with lullabies in bio-rhythmic script
-          from the vanished Elgaian civilization.
-        </p>
-      </div>
-      <div class="artifact-card">
-        <img src="../images/nomadechocup.png" alt="Nomad’s Echo Cup" />
-        <h3>Nomad’s Echo Cup</h3>
-        <p>
-          A ceremonial drinking vessel capturing vocal wave imprints
-          when used in festive rites.
-        </p>
-      </div>
+    <!-- Archaeology Section -->
+    <section id="archaeology" class="collection-section active" aria-label="Archaeology Artifacts">
+      <h1 class="collection-title">Artifacts (Archaeology)</h1>
+
+      <!-- Artifact 1 -->
+      <article class="artifact-card" tabindex="0">
+        <img src="../images/collections/stoneofelgaia.png" alt="Cradle Stone of Elgaia, luminescent slab etched with bio-rhythmic script" />
+        <div class="artifact-info">
+          <h3>Cradle Stone of Elgaia</h3>
+          <dl class="metadata-list">
+            <dt>Material:</dt><dd>Luminescent biocrystal slab</dd>
+            <dt>Size/Weight/Shape:</dt><dd>Rectangular slab, 30cm x 20cm x 2cm, weighs ~2.5 kg</dd>
+            <dt>Estimated Age:</dt><dd>Approx. 2,500 years (carbon dated)</dd>
+            <dt>Preservation State:</dt><dd>Pristine with minor surface abrasions</dd>
+            <dt>Location Found:</dt><dd>Elgaia Ruins, Cave 5, Coordinates: 42.387°N, 71.082°W</dd>
+            <dt>Use and Function:</dt><dd>Inscribed tablet for ritual lullabies</dd>
+            <dt>Likely Purpose:</dt><dd>Ceremonial artifact for child blessings</dd>
+            <dt>Evidence of Use:</dt><dd>Faint handprint smudges along edges</dd>
+            <dt>Manufacture Clues:</dt><dd>Intricate engraving using fine chisels; bio-etching patterns</dd>
+            <dt>Cultural Context:</dt><dd>Elgaian civilization known for sound-based rituals</dd>
+            <dt>Found With:</dt><dd>Small bone flute and woven textile fragments</dd>
+            <dt>Burial or Habitat Context:</dt><dd>Buried in cave altar site</dd>
+            <dt>Symbolism:</dt><dd>Lullaby inscriptions believed to summon protective spirits</dd>
+            <dt>Comparison:</dt><dd>Similar to stone tablets found in neighboring Elara site but with unique bio-rhythmic script</dd>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Artifact 2 -->
+      <article class="artifact-card" tabindex="0">
+        <img src="../images/collections/nomadechocup.png" alt="Nomad’s Echo Cup, ceremonial drinking vessel" />
+        <div class="artifact-info">
+          <h3>Nomad’s Echo Cup</h3>
+          <dl class="metadata-list">
+            <dt>Material:</dt><dd>Clay with organic resin coating</dd>
+            <dt>Size/Weight/Shape:</dt><dd>Cylindrical cup, 10cm tall, 8cm diameter, weighs 350g</dd>
+            <dt>Estimated Age:</dt><dd>Circa 1,800 years (inferred from burial layer)</dd>
+            <dt>Preservation State:</dt><dd>Partial glaze intact, minor chips at rim</dd>
+            <dt>Location Found:</dt><dd>Nomad’s Valley, Burial Mound 4</dd>
+            <dt>Use and Function:</dt><dd>Ceremonial drinking vessel capturing vocal wave imprints</dd>
+            <dt>Likely Purpose:</dt><dd>Used in festive rites to "record" chants</dd>
+            <dt>Evidence of Use:</dt><dd>Residue of fermented grains detected inside</dd>
+            <dt>Manufacture Clues:</dt><dd>Wheel-thrown pottery with hand-applied resin</dd>
+            <dt>Cultural Context:</dt><dd>Nomadic tribe with vocal ritual traditions</dd>
+            <dt>Found With:</dt><dd>Bronze dagger and carved bone beads</dd>
+            <dt>Burial or Habitat Context:</dt><dd>Interred within mound grave</dd>
+            <dt>Symbolism:</dt><dd>Resin patterns mimic sound wave motifs</dd>
+            <dt>Comparison:</dt><dd>Unique among contemporaneous vessels due to resin coating</dd>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Artifact 3 -->
+      <article class="artifact-card" tabindex="0">
+        <img src="../images/collections/obarrow.png" alt="Obsidian arrowhead with leather wrap" />
+        <div class="artifact-info">
+          <h3>Obsidian Arrowhead</h3>
+          <dl class="metadata-list">
+            <dt>Material:</dt><dd>Obsidian stone with leather shaft binding</dd>
+            <dt>Size/Weight/Shape:</dt><dd>Leaf-shaped blade 7cm long, attached to 30cm shaft</dd>
+            <dt>Estimated Age:</dt><dd>Approximately 3,000 years (carbon dated wood)</dd>
+            <dt>Preservation State:</dt><dd>Blade pristine, leather largely decayed</dd>
+            <dt>Location Found:</dt><dd>Peat bog near River Tharn, Site B12</dd>
+            <dt>Use and Function:</dt><dd>Hunting weapon</dd>
+            <dt>Likely Purpose:</dt><dd>Projectile for medium game</dd>
+            <dt>Evidence of Use:</dt><dd>Minor edge chipping, residue of animal blood</dd>
+            <dt>Manufacture Clues:</dt><dd>Flaked obsidian with leather bindings to shaft</dd>
+            <dt>Cultural Context:</dt><dd>Early riverine hunter-gatherer society</dd>
+            <dt>Found With:</dt><dd>Wooden spear shaft and flint scraper</dd>
+            <dt>Burial or Habitat Context:</dt><dd>Deposited in wetland ritual cache</dd>
+            <dt>Symbolism:</dt><dd>Blade represents strength and precision in hunting rites</dd>
+            <dt>Comparison:</dt><dd>Similar to arrowheads from neighboring clans but more refined craftsmanship</dd>
+          </dl>
+        </div>
+      </article>
     </section>
 
-    <section id="anthropology">
-      <h2>Remains (Anthropology)</h2>
-      <div class="remain-card">
-        <img src="../images/tattedribcage.png" alt="Tattooed Ribcage of the Skyborn" />
-        <h3>Tattooed Ribcage of the Skyborn</h3>
-        <p>
-          Engraved with celestial charts, discovered in a desert cavern.
-        </p>
-      </div>
-      <div class="remain-card">
-        <img src="../images/whisperskull.png" alt="Whisper Skull" />
-        <h3>Whisper Skull</h3>
-        <p>
-          Emits faint tones under moonlight—perhaps a memory-vault
-          of ancient chants.
-        </p>
-      </div>
+    <!-- Anthropology Section -->
+    <section id="anthropology" class="collection-section" aria-label="Anthropology Remains">
+      <h1 class="collection-title">Remains (Anthropology)</h1>
+
+      <!-- Remain 1 -->
+      <article class="remain-card" tabindex="0">
+        <img src="../images/collections/tattedribcage.png" alt="Tattooed ribcage of the Skyborn engraved with celestial charts" />
+        <div class="remain-info">
+          <h3>Tattooed Ribcage of the Skyborn</h3>
+          <dl class="metadata-list">
+            <dt>Material:</dt><dd>Human skeletal remains</dd>
+            <dt>Size/Weight/Shape:</dt><dd>Adult ribcage, intact, approx. 40cm wide</dd>
+            <dt>Estimated Age:</dt><dd>About 1,200 years old (radiocarbon dating)</dd>
+            <dt>Preservation State:</dt><dd>Partial skeleton, ribcage well preserved with tattoos visible</dd>
+            <dt>Location Found:</dt><dd>Desert cavern near Skyborn Oasis, Coordinates: 25.678°N, 52.456°E</dd>
+            <dt>Use and Function:</dt><dd>Likely ceremonial relic</dd>
+            <dt>Likely Purpose:</dt><dd>Symbolic, possibly a shaman or leader's remains</dd>
+            <dt>Evidence of Use:</dt><dd>Clear tattoo ink patterns remain despite age</dd>
+            <dt>Manufacture Clues:</dt><dd>Tattoos created using iron oxide pigment</dd>
+            <dt>Cultural Context:</dt><dd>Skyborn tribe revered celestial navigation</dd>
+            <dt>Found With:</dt><dd>Beads made from desert stones and bone tools</dd>
+            <dt>Burial or Habitat Context:</dt><dd>Placed within a ritual burial chamber</dd>
+            <dt>Symbolism:</dt><dd>Celestial charts possibly map spiritual journey</dd>
+            <dt>Comparison:</dt><dd>Similar to other tattooed remains found in Oasis region</dd>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Remain 2 -->
+      <article class="remain-card" tabindex="0">
+        <img src="../images/collections/whisperskull.png" alt="Whisper Skull emitting faint tones under moonlight" />
+        <div class="remain-info">
+          <h3>Whisper Skull</h3>
+          <dl class="metadata-list">
+            <dt>Material:</dt><dd>Human skull with hollowed cranium</dd>
+            <dt>Size/Weight/Shape:</dt><dd>Adult human skull, 22cm long, lightweight due to hollowness</dd>
+            <dt>Estimated Age:</dt><dd>Approx. 900 years old (contextual dating)</dd>
+            <dt>Preservation State:</dt><dd>Well preserved, minor cracks</dd>
+            <dt>Location Found:</dt><dd>Moonlit cave, Whisper Valley</dd>
+            <dt>Use and Function:</dt><dd>Possibly a ritual sound instrument</dd>
+            <dt>Likely Purpose:</dt><dd>Used to emit faint tones during ceremonies</dd>
+            <dt>Evidence of Use:</dt><dd>Wear marks near nasal cavity and hollow</dd>
+            <dt>Manufacture Clues:</dt><dd>Deliberate hollowness, smoothed edges</dd>
+            <dt>Cultural Context:</dt><dd>Local tribe with strong sound ritual practices</dd>
+            <dt>Found With:</dt><dd>Animal bones and carved wooden sticks</dd>
+            <dt>Burial or Habitat Context:</dt><dd>Found inside sacred cave</dd>
+            <dt>Symbolism:</dt><dd>Believed to house voices of ancestors</dd>
+            <dt>Comparison:</dt><dd>Rare find, no close analogs in surrounding areas</dd>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Remain 3 -->
+      <article class="remain-card" tabindex="0">
+        <img src="../images/collections/maskfragment.png" alt="Fragment of ceremonial mask with intricate carvings" />
+        <div class="remain-info">
+          <h3>Ceremonial Mask Fragment</h3>
+          <dl class="metadata-list">
+            <dt>Material:</dt><dd>Carved wood with pigment remnants</dd>
+            <dt>Size/Weight/Shape:</dt><dd>Fragment approx. 15cm x 10cm, curved piece</dd>
+            <dt>Estimated Age:</dt><dd>Estimated 1,600 years old (stratigraphy)</dd>
+            <dt>Preservation State:</dt><dd>Partial, worn edges and faded colors</dd>
+            <dt>Location Found:</dt><dd>Ancient burial site, Site Delta</dd>
+            <dt>Use and Function:</dt><dd>Likely ceremonial mask used in rituals</dd>
+            <dt>Likely Purpose:</dt><dd>Worn by tribal elders or spiritual leaders</dd>
+            <dt>Evidence of Use:</dt><dd>Wear on edges, traces of pigments</dd>
+            <dt>Manufacture Clues:</dt><dd>Carved using obsidian tools, painted with natural dyes</dd>
+            <dt>Cultural Context:</dt><dd>Belonged to Delta tribe known for spiritual ceremonies</dd>
+            <dt>Found With:</dt><dd>Charcoal remains and ceremonial robes</dd>
+            <dt>Burial or Habitat Context:</dt><dd>Buried in tomb with other ritual objects</dd>
+            <dt>Symbolism:</dt><dd>Mask patterns represent ancestral spirits</dd>
+            <dt>Comparison:</dt><dd>Similar motifs found on pottery shards in same site</dd>
+          </dl>
+        </div>
+      </article>
     </section>
 
-    <section id="histories" class="histories-section">
-      <h2>Histories (Interpretations)</h2>
+    <!-- Histories Section -->
+    <section id="histories" class="collection-section" aria-label="Histories Interpretations">
+      <h1 class="collection-title">Histories (Interpretations)</h1>
       <p>
         Interpretations generated by our Cultural Historians
         will appear here. Check back soon for narrated mythologies
@@ -74,5 +190,32 @@
       </p>
     </section>
   </main>
+
+  <footer class="ai-note" role="contentinfo">
+    <p>
+      The content in this gallery was entirely created by AI under human direction.
+      It was then curated, reviewed, and edited by a human before being published.
+    </p>
+    <p>
+      AI contributions: Images.
+    </p>
+  </footer>
+
+  <script>
+    function showSection(sectionId, btn) {
+      const sections = document.querySelectorAll('.collection-section');
+      sections.forEach(s => s.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+
+      // Update buttons aria-expanded and active class
+      const buttons = document.querySelectorAll('.sub-nav button');
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-expanded', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  </script>
 </body>
 </html>

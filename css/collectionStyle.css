@@ -1,0 +1,131 @@
+/* style.css - external stylesheet for The Echoes Archive */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Roboto:wght@400;500&display=swap');
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background-color: #f7f7f7;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+  color: #324b4a;
+  margin-top: 0;
+}
+
+/* Header */
+header {
+  background: #324b4a;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+nav.main-nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav.main-nav a:hover,
+nav.sub-nav button:hover {
+  text-decoration: underline;
+}
+
+/* Main layout */
+main.collections-layout {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Sub-nav buttons */
+nav.sub-nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav.sub-nav button {
+  padding: 0.5rem 1rem;
+  background-color: #558b7d;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav.sub-nav button.active,
+nav.sub-nav button:focus {
+  background-color: #324b4a;
+  outline: none;
+}
+
+/* Sections */
+section.collection-section {
+  display: none;
+  margin-bottom: 3rem;
+}
+
+section.collection-section.active {
+  display: block;
+}
+
+/* Collection title */
+h1.collection-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #558b7d;
+  padding-bottom: 0.3rem;
+}
+
+/* Cards */
+.artifact-card, .remain-card {
+  display: flex;
+  gap: 1.5rem;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  align-items: flex-start;
+}
+
+.artifact-card img, .remain-card img {
+  max-width: 200px;
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Info container */
+.artifact-info, .remain-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Artifact titles */
+.artifact
