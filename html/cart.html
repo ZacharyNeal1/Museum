@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart – The Echoes Archive</title>
+  <link rel="stylesheet" href="../css/collectionStyle.css">
+  <style>
+    .cart-table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    .cart-table th, .cart-table td {
+      border: 1px solid #444;
+      padding: 8px;
+    }
+    .cart-table th { background: #eee; }
+    .cart-table td.amount { text-align: right; }
+    .thumb { width: 50px; }
+    .cart-summary {
+      width: 90%;
+      margin: 20px auto;
+      border: 2px solid #222;
+      padding: 15px;
+      background: #fafafa;
+    }
+    .cart-summary p { margin: 5px 0; }
+    .cart-summary .amount { float: right; }
+    button { margin: 5px; padding: 6px 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Shopping Cart</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="collections.html">Collections</a>
+      <a href="shop-template.html">Shop</a>
+      <a href="cart.html" aria-current="page">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="cartContainer"></div>
+  </main>
+
+  <script>
+    const CART_KEY = 'museumCartV1';
+    const TAX_RATE = 0.102;
+    const MEMBER_DISCOUNT_RATE = 0.15;
+    const SHIPPING_RATE = 25.00;
+    const VOLUME_DISCOUNT_TIERS = [
+      { min: 200, rate: 0.15 },
+      { min: 100, rate: 0.10 },
+      { min: 50, rate: 0.05 },
+      { min: 0, rate: 0.00 }
+    ];
+
+    function readCart() {
+      try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+      catch { return []; }
+    }
+    function writeCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function render() {
+      let cart = readCart();
+      const container = document.getElementById("cartContainer");
+      if (cart.length === 0) {
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+      }
+
+      // preserve discount checkbox state
+      let prevChecked = document.getElementById("memberChk")?.checked || false;
+
+      let html = `<table class="cart-table">
+        <tr>
+          <th>Item</th><th>Qty</th><th>Price</th><th>Line Total</th><th>Action</th>
+        </tr>`;
+
+      let itemTotal = 0;
+      cart.forEach(it => {
+        const line = it.unitPrice * it.qty;
+        itemTotal += line;
+        html += `
+          <tr>
+            <td><img src="${it.image}" class="thumb" alt=""> ${it.name}</td>
+            <td>${it.qty}</td>
+            <td class="amount">$${it.unitPrice.toFixed(2)}</td>
+            <td class="amount">$${line.toFixed(2)}</td>
+            <td><button onclick="removeItem('${it.id}')">Remove</button></td>
+          </tr>`;
+      });
+      html += `</table>`;
+
+      // discounts
+      let volumeRate = VOLUME_DISCOUNT_TIERS.find(t => itemTotal >= t.min).rate;
+      let volumeDiscount = itemTotal * volumeRate;
+
+      let memberDiscount = prevChecked ? itemTotal * MEMBER_DISCOUNT_RATE : 0;
+
+      let appliedDiscount = 0;
+      if (volumeDiscount > 0 && memberDiscount > 0) {
+        const choice = confirm("Both discounts apply. OK = Member, Cancel = Volume.");
+        appliedDiscount = choice ? memberDiscount : volumeDiscount;
+      } else {
+        appliedDiscount = memberDiscount || volumeDiscount;
+      }
+
+      let subTotal = itemTotal - appliedDiscount + SHIPPING_RATE;
+      let taxAmount = subTotal * TAX_RATE;
+      let invoiceTotal = subTotal + taxAmount;
+
+      html += `<div class="cart-summary">
+        <label><input type="checkbox" id="memberChk"> Apply Member Discount</label>
+        <p>Item Total: <span class="amount">$${itemTotal.toFixed(2)}</span></p>
+        <p>Discount: <span class="amount">(${appliedDiscount.toFixed(2)})</span></p>
+        <p>Shipping: <span class="amount">$${SHIPPING_RATE.toFixed(2)}</span></p>
+        <p>Subtotal: <span class="amount">$${subTotal.toFixed(2)}</span></p>
+        <p>Tax (${(TAX_RATE*100).toFixed(1)}%): <span class="amount">$${taxAmount.toFixed(2)}</span></p>
+        <p><strong>Invoice Total: <span class="amount">$${invoiceTotal.toFixed(2)}</span></strong></p>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="location.href='shop-template.html'">Keep Shopping</button>
+      </div>`;
+
+      container.innerHTML = html;
+
+      // restore checkbox + add listener
+      const chk = document.getElementById("memberChk");
+      chk.checked = prevChecked;
+      chk.addEventListener("change", render);
+    }
+
+    function removeItem(id) {
+      let cart = readCart().filter(it => it.id !== id);
+      writeCart(cart);
+      render();
+    }
+    function clearCart() {
+      writeCart([]);
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
