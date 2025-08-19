@@ -8,6 +8,50 @@
   <meta name="generator" content="Generated in part with AI assistance for educational purposes." />
   <title>Collections – The Echoes Archive</title>
   <link rel="stylesheet" href="../css/collectionStyle.css" />
+  <style>
+    /* Popup Modal Styles */
+    .popup-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right:0; bottom:0;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-modal.active {
+      display: flex;
+    }
+
+    .popup-content {
+      position: relative;
+      background-color: #fff;
+      padding: 1.5rem;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 10px;
+      overflow-y: auto;
+      max-height: 80vh;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Optional: cursor pointer on images */
+    .artifact-card img,
+    .remain-card img {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="collections-bg">
   <header>
@@ -33,10 +77,14 @@
 
       <!-- Artifact 1 -->
       <article class="artifact-card" tabindex="0">
-        <img src="../images/collections/stoneofelgaia.png" alt="Cradle Stone of Elgaia, luminescent slab etched with bio-rhythmic script" />
+        <img src="../images/collections/stoneofelgaia.png"
+             alt="Cradle Stone of Elgaia, luminescent slab etched with bio-rhythmic script"
+             class="open-modal"
+             data-title="Cradle Stone of Elgaia"
+             data-content="Material: Luminescent biocrystal slab. Location Found: Elgaia Ruins, Cave 5. Function: Ritual lullabies. Interpretation: This artifact likely served as a ceremonial tablet used to invoke protective spirits over children. Intricate bio-rhythmic engravings indicate a highly advanced symbolic culture. Evidence of handprints suggests active ritual use, and comparison to nearby sites shows unique regional variation. Approximately 2,500 years old." />
         <div class="artifact-info">
           <h3>Cradle Stone of Elgaia</h3>
-          <dl class="metadata-list">
+                    <dl class="metadata-list">
             <dt>Material:</dt><dd>Luminescent biocrystal slab</dd>
             <dt>Size/Weight/Shape:</dt><dd>Rectangular slab, 30cm x 20cm x 2cm, weighs ~2.5 kg</dd>
             <dt>Estimated Age:</dt><dd>Approx. 2,500 years (carbon dated)</dd>
@@ -57,10 +105,14 @@
 
       <!-- Artifact 2 -->
       <article class="artifact-card" tabindex="0">
-        <img src="../images/collections/nomadechocup.png" alt="Nomad’s Echo Cup, ceremonial drinking vessel" />
+        <img src="../images/collections/nomadechocup.png"
+             alt="Nomad’s Echo Cup, ceremonial drinking vessel"
+             class="open-modal"
+             data-title="Nomad’s Echo Cup"
+             data-content="Material: Clay with organic resin coating. Location Found: Nomad’s Valley, Burial Mound 4. Function: Ceremonial drinking vessel. Interpretation: Used to capture vocal wave imprints during festive rituals. The resin coating preserves sound patterns unique to the tribe. Evidence of fermented grains shows ritual consumption. This 1,800-year-old cup reflects both spiritual and social ceremonial practice, and its craftsmanship sets it apart from similar vessels." />
         <div class="artifact-info">
           <h3>Nomad’s Echo Cup</h3>
-          <dl class="metadata-list">
+                    <dl class="metadata-list">
             <dt>Material:</dt><dd>Clay with organic resin coating</dd>
             <dt>Size/Weight/Shape:</dt><dd>Cylindrical cup, 10cm tall, 8cm diameter, weighs 350g</dd>
             <dt>Estimated Age:</dt><dd>Circa 1,800 years (inferred from burial layer)</dd>
@@ -81,10 +133,14 @@
 
       <!-- Artifact 3 -->
       <article class="artifact-card" tabindex="0">
-        <img src="../images/collections/obarrow.png" alt="Obsidian arrowhead with leather wrap" />
+        <img src="../images/collections/obarrow.png"
+             alt="Obsidian arrowhead with leather wrap"
+             class="open-modal"
+             data-title="Obsidian Arrowhead"
+             data-content="Material: Obsidian with leather binding. Location Found: Peat bog near River Tharn, Site B12. Function: Hunting projectile. Interpretation: Blade symbolizes precision and strength in early hunter-gatherer societies. Minor edge chipping and blood residue indicate practical use. Approximately 3,000 years old, this artifact demonstrates refined craftsmanship compared to neighboring clans, reflecting both utility and ceremonial respect for hunting." />
         <div class="artifact-info">
           <h3>Obsidian Arrowhead</h3>
-          <dl class="metadata-list">
+                    <dl class="metadata-list">
             <dt>Material:</dt><dd>Obsidian stone with leather shaft binding</dd>
             <dt>Size/Weight/Shape:</dt><dd>Leaf-shaped blade 7cm long, attached to 30cm shaft</dd>
             <dt>Estimated Age:</dt><dd>Approximately 3,000 years (carbon dated wood)</dd>
@@ -110,10 +166,14 @@
 
       <!-- Remain 1 -->
       <article class="remain-card" tabindex="0">
-        <img src="../images/collections/tattedribcage.png" alt="Tattooed ribcage of the Skyborn engraved with celestial charts" />
+        <img src="../images/collections/tattedribcage.png"
+             alt="Tattooed ribcage of the Skyborn engraved with celestial charts"
+             class="open-modal"
+             data-title="Tattooed Ribcage of the Skyborn"
+             data-content="Material: Human skeletal remains. Location Found: Desert cavern near Skyborn Oasis. Function: Ceremonial relic. Interpretation: The ribcage tattoos map celestial navigation patterns, likely used by tribal shamans. Preserved pigments suggest symbolic significance and careful burial practices. Approximately 1,200 years old, it illustrates the tribe's spiritual and navigational knowledge." />
         <div class="remain-info">
           <h3>Tattooed Ribcage of the Skyborn</h3>
-          <dl class="metadata-list">
+                    <dl class="metadata-list">
             <dt>Material:</dt><dd>Human skeletal remains</dd>
             <dt>Size/Weight/Shape:</dt><dd>Adult ribcage, intact, approx. 40cm wide</dd>
             <dt>Estimated Age:</dt><dd>About 1,200 years old (radiocarbon dating)</dd>
@@ -134,10 +194,14 @@
 
       <!-- Remain 2 -->
       <article class="remain-card" tabindex="0">
-        <img src="../images/collections/whisperskull.png" alt="Whisper Skull emitting faint tones under moonlight" />
+        <img src="../images/collections/whisperskull.png"
+             alt="Whisper Skull emitting faint tones under moonlight"
+             class="open-modal"
+             data-title="Whisper Skull"
+             data-content="Material: Human skull with hollowed cranium. Location Found: Moonlit cave, Whisper Valley. Function: Ritual sound instrument. Interpretation: Designed to produce faint tones for ceremonial practices, possibly to emulate ancestral voices. Minor wear indicates repeated ritual usage. Dated approx. 900 years old, this object emphasizes the importance of sound in local spiritual ceremonies." />
         <div class="remain-info">
           <h3>Whisper Skull</h3>
-          <dl class="metadata-list">
+                    <dl class="metadata-list">
             <dt>Material:</dt><dd>Human skull with hollowed cranium</dd>
             <dt>Size/Weight/Shape:</dt><dd>Adult human skull, 22cm long, lightweight due to hollowness</dd>
             <dt>Estimated Age:</dt><dd>Approx. 900 years old (contextual dating)</dd>
@@ -158,10 +222,14 @@
 
       <!-- Remain 3 -->
       <article class="remain-card" tabindex="0">
-        <img src="../images/collections/maskfragment.png" alt="Fragment of ceremonial mask with intricate carvings" />
+        <img src="../images/collections/maskfragment.png"
+             alt="Fragment of ceremonial mask with intricate carvings"
+             class="open-modal"
+             data-title="Ceremonial Mask Fragment"
+             data-content="Material: Carved wood with pigment remnants. Location Found: Ancient burial site, Site Delta. Function: Ritual mask. Interpretation: Likely worn by elders or spiritual leaders during ceremonies, representing ancestral spirits. Traces of pigments and carved obsidian tools indicate skilled craftsmanship. Estimated 1,600 years old, the fragment provides insight into spiritual and artistic practices of the Delta tribe." />
         <div class="remain-info">
           <h3>Ceremonial Mask Fragment</h3>
-          <dl class="metadata-list">
+                    <dl class="metadata-list">
             <dt>Material:</dt><dd>Carved wood with pigment remnants</dd>
             <dt>Size/Weight/Shape:</dt><dd>Fragment approx. 15cm x 10cm, curved piece</dd>
             <dt>Estimated Age:</dt><dd>Estimated 1,600 years old (stratigraphy)</dd>
@@ -182,37 +250,326 @@
     </section>
 
     <!-- Histories Section -->
-    <section id="histories" class="collection-section" aria-label="Histories Interpretations">
-      <h1 class="collection-title">Histories (Interpretations)</h1>
+<section id="histories" class="collection-section" aria-label="Histories Interpretations">
+  <h1 class="collection-title">Histories (Interpretations)</h1>
+
+  <!-- Artifact 1: Cradle Stone of Elgaia -->
+  <article class="history-card" tabindex="0">
+    <img src="../images/collections/stoneofelgaia.png"
+         alt="Cradle Stone of Elgaia, luminescent slab etched with bio-rhythmic script"
+         class="history-img" />
+    <div class="history-info">
+      <h3>Cradle Stone of Elgaia – Exhibit Interpretation</h3>
       <p>
-        Interpretations generated by our Cultural Historians
-        will appear here. Check back soon for narrated mythologies
-        woven from the artifacts and remains above.
+        The Cradle Stone of Elgaia, discovered deep within Cave 5 of the Elgaia Ruins, is a 
+        luminescent biocrystal slab measuring approximately 30cm by 20cm and 2cm thick. 
+        Its intricate bio-rhythmic engravings suggest it was central to ritual practices 
+        designed to protect and bless infants. Faint handprints along the surface indicate 
+        ceremonial handling, while comparative analysis with nearby sites suggests unique 
+        regional symbolism. This artifact demonstrates a sophisticated understanding of 
+        ritualized sound and symbolic communication within the Elgaian civilization. 
+        The stone’s preservation, despite its 2,500-year history, allows contemporary 
+        viewers to glimpse the interwoven nature of spirituality, community, and artistic 
+        expression. Associated finds, including a bone flute and woven textile fragments, 
+        underscore the multisensory dimension of Elgaian rites, integrating auditory, 
+        tactile, and visual cues. Displaying this piece in the museum emphasizes not only 
+        the technical skill of ancient craftsmen but also the societal importance of children, 
+        ritual protection, and the broader cultural worldview that regarded music and sound 
+        as conduits for spiritual engagement.
       </p>
-    </section>
+      <p>
+        The exhibit situates the stone in a broader narrative of symbolic and ritual practices, 
+        explaining to visitors how civilizations encode belief systems into physical objects. 
+        Its bio-rhythmic patterns offer evidence of the Elgaian approach to combining sound 
+        and symbolism, providing insight into early cognitive and cultural sophistication. 
+        Museum labels further highlight its ceremonial and social significance, helping the 
+        public appreciate both the artifact’s aesthetic qualities and its functional role 
+        in daily and ritual life. By contextualizing the Cradle Stone alongside artifacts 
+        from neighboring regions, the display fosters a dialogue on regional variation, 
+        technological achievement, and spiritual creativity in early human societies.
+      </p>
+      <p>
+        Through its design, handling marks, and associated objects, the Cradle Stone embodies 
+        the integration of artistic expression with ritual utility. Its preservation offers 
+        a rare lens on the ceremonial life of the Elgaian civilization, showcasing how material 
+        culture informs our understanding of social cohesion, symbolic thought, and the human 
+        experience over millennia.
+      </p>
+    </div>
+  </article>
+
+  <!-- Artifact 2: Nomad’s Echo Cup -->
+  <article class="history-card" tabindex="0">
+    <img src="../images/collections/nomadechocup.png"
+         alt="Nomad’s Echo Cup, ceremonial drinking vessel"
+         class="history-img" />
+    <div class="history-info">
+      <h3>Nomad’s Echo Cup – Exhibit Interpretation</h3>
+      <p>
+        The Nomad’s Echo Cup, unearthed from Burial Mound 4 in Nomad’s Valley, represents 
+        a unique convergence of ceremonial practice, craftsmanship, and acoustic technology. 
+        Made of clay coated with organic resin, this cylindrical vessel was designed to preserve 
+        vocal wave patterns, capturing the sound of chants and ritualistic recitations. Evidence 
+        of fermented grains suggests that it was not only symbolic but also actively used 
+        during ceremonial consumption, highlighting the interplay between communal festivity 
+        and spiritual practice. The cup’s 1,800-year-old provenance underscores its role in 
+        transmitting cultural identity through both tangible form and auditory function.
+      </p>
+      <p>
+        The resin coating preserves intricate acoustic signatures, indicating that the tribe 
+        placed high value on capturing the ephemeral qualities of sound. Anthropological analysis 
+        reveals that these cups were likely used in paired or grouped settings, allowing ritual 
+        sounds to resonate within ceremonial chambers and enhancing communal participation. 
+        The combination of handcrafted pottery techniques with acoustic preservation reflects 
+        a sophisticated understanding of both material properties and social dynamics. 
+        This artifact illuminates how nomadic societies integrated spiritual, artistic, and 
+        practical objectives into a single ceremonial object, serving both as a vessel and 
+        a sound archive.
+      </p>
+      <p>
+        Museum exhibit interpretation situates the Echo Cup as an emblem of intangible cultural 
+        heritage, linking sound, ritual, and social cohesion. By contextualizing its use, 
+        conservation, and unique acoustic properties, the display invites visitors to consider 
+        the ingenuity of ancient peoples in preserving collective memory. The Nomad’s Echo Cup 
+        exemplifies how daily objects can transcend utility, embodying both spiritual resonance 
+        and social identity, and offers a window into the ceremonial life of nomadic communities.
+      </p>
+    </div>
+  </article>
+
+  <!-- Artifact 3: Obsidian Arrowhead -->
+  <article class="history-card" tabindex="0">
+    <img src="../images/collections/obarrow.png"
+         alt="Obsidian arrowhead with leather wrap"
+         class="history-img" />
+    <div class="history-info">
+      <h3>Obsidian Arrowhead – Exhibit Interpretation</h3>
+      <p>
+        The Obsidian Arrowhead from the Peat Bog near River Tharn, Site B12, is a finely 
+        crafted hunting tool reflecting early riverine hunter-gatherer ingenuity. The leaf-shaped 
+        obsidian blade, bound with leather to a 30cm shaft, demonstrates technical skill in 
+        both stone flaking and organic material binding. Minor edge chipping and residue of 
+        animal blood indicate practical hunting use, while the artifact’s deposition in a 
+        wetland ritual cache hints at ceremonial significance, possibly as an offering to ensure 
+        successful hunts. At approximately 3,000 years old, the arrowhead offers insight into 
+        technological adaptation, subsistence strategies, and symbolic practices.
+      </p>
+      <p>
+        This artifact contextualizes the relationship between utility and cultural symbolism, 
+        highlighting how functional items can embody spiritual meaning. The Obsidian Arrowhead’s 
+        craftsmanship illustrates knowledge transfer and refinement of lithic techniques, 
+        reflecting social learning and skill specialization. Associated wooden spear shafts and 
+        flint scrapers found in proximity indicate coordinated hunting strategies and shared 
+        ritual practices. Museum interpretation emphasizes how material choices and form 
+        communicate both practical intent and cultural values, connecting modern audiences 
+        to the daily and ceremonial lives of ancient hunter-gatherer societies.
+      </p>
+      <p>
+        Displaying the arrowhead encourages reflection on the dual roles of tools: as agents 
+        of survival and as vessels of symbolic meaning. Visitors gain appreciation for the 
+        complexity of early societies that balanced practical necessities with spiritual 
+        and communal obligations. The artifact exemplifies the integration of technology, 
+        artistry, and belief systems that shaped the prehistoric landscape of the region.
+      </p>
+    </div>
+  </article>
+
+  <!-- Remain 1: Tattooed Ribcage of the Skyborn -->
+  <article class="history-card" tabindex="0">
+    <img src="../images/collections/tattedribcage.png"
+         alt="Tattooed ribcage of the Skyborn engraved with celestial charts"
+         class="history-img" />
+    <div class="history-info">
+      <h3>Tattooed Ribcage of the Skyborn – Exhibit Interpretation</h3>
+      <p>
+        The Tattooed Ribcage of the Skyborn, recovered from a desert cavern near Skyborn 
+        Oasis, provides an extraordinary window into spiritual and navigational practices 
+        of an ancient tribal society. The adult human ribcage, approximately 40cm wide, 
+        retains clear tattoos mapping celestial navigation patterns. These markings suggest 
+        the individual held specialized knowledge, potentially as a shaman or leader guiding 
+        others through desert landscapes. Radiocarbon dating places the remains at around 
+        1,200 years old, offering a rare example of body-based cartographic and symbolic expression.
+      </p>
+      <p>
+        The tattoos’ preservation underscores the tribe’s attention to ritual detail and 
+        reverence for their navigators. Associated artifacts, including beads and bone tools, 
+        hint at ceremonial placement and careful burial practices. Museum interpretation emphasizes 
+        the integration of spiritual guidance and practical navigation, framing the ribcage 
+        as both a functional object and a symbolic emblem of tribal knowledge. Visitors can 
+        appreciate how personal identity, expertise, and spiritual responsibility were encoded 
+        directly onto the body, bridging the tangible and intangible cultural heritage of 
+        the Skyborn tribe.
+      </p>
+      <p>
+        By situating the ribcage in this interpretive narrative, the exhibit encourages 
+        reflection on ancient methods of teaching, record-keeping, and symbolic communication. 
+        It also highlights the cultural value placed on knowledge custodians and the complex 
+        interrelationship between spirituality, science, and social hierarchy. The Tattooed 
+        Ribcage illustrates how human bodies serve as both vessels of life and archives of 
+        cultural memory, bridging past and present through enduring material and symbolic evidence.
+      </p>
+    </div>
+  </article>
+
+  <!-- Remain 2: Whisper Skull -->
+  <article class="history-card" tabindex="0">
+    <img src="../images/collections/whisperskull.png"
+         alt="Whisper Skull emitting faint tones under moonlight"
+         class="history-img" />
+    <div class="history-info">
+      <h3>Whisper Skull – Exhibit Interpretation</h3>
+      <p>
+        The Whisper Skull, excavated from Moonlit Cave in Whisper Valley, exemplifies the 
+        integration of human remains into ceremonial sound practices. Hollowed carefully to 
+        produce faint tonal vibrations, this adult human skull likely served as a ritual 
+        instrument for ceremonies emulating ancestral voices. Minor wear marks indicate 
+        repeated ceremonial use over approximately 900 years, reflecting the importance of 
+        auditory experience in spiritual practice. The deliberate hollowness and smooth edges 
+        demonstrate both technical skill and ceremonial intentionality.
+      </p>
+      <p>
+        Museum interpretation situates the Whisper Skull within a broader cultural context, 
+        emphasizing the relationship between sound, ritual, and memory. The object illustrates 
+        how communities imbued material objects with symbolic and functional significance, 
+        preserving intangible heritage such as ancestral sounds and spiritual resonance. 
+        Accompanying animal bones and carved wooden sticks suggest ritual completeness and 
+        spatially coordinated ceremonial activity. Visitors gain insight into the ways that 
+        sound, material culture, and human remains intersect to produce spiritual experiences 
+        and reinforce social cohesion.
+      </p>
+      <p>
+        Displaying the Whisper Skull encourages reflection on sensory engagement in ritual, 
+        the innovation of symbolic technology, and the ways that artifacts mediate between 
+        the living and the ancestral. Its presence exemplifies the creativity, belief systems, 
+        and technological competence of past societies, bridging anthropological study and 
+        experiential understanding for museum audiences.
+      </p>
+    </div>
+  </article>
+
+  <!-- Remain 3: Ceremonial Mask Fragment -->
+  <article class="history-card" tabindex="0">
+    <img src="../images/collections/maskfragment.png"
+         alt="Fragment of ceremonial mask with intricate carvings"
+         class="history-img" />
+    <div class="history-info">
+      <h3>Ceremonial Mask Fragment – Exhibit Interpretation</h3>
+      <p>
+        The Ceremonial Mask Fragment, recovered from Site Delta, represents the artistic 
+        and spiritual sophistication of the Delta tribe approximately 1,600 years ago. 
+        Carved from wood and adorned with faded pigments, this curved piece of mask would 
+        have been worn by elders or spiritual leaders during ceremonial rituals. Analysis 
+        of carving techniques and pigment residues reveals specialized craftsmanship, 
+        illustrating the importance of ritual art in social and spiritual life.
+      </p>
+      <p>
+        The fragment’s careful burial alongside charcoal remains and ceremonial robes highlights 
+        its significance within a structured spiritual context. Museum interpretation emphasizes 
+        the mask’s role in representing ancestral spirits, mediating between the living and 
+        the sacred, and reinforcing community identity through performative practice. Visitors 
+        can appreciate how art, ritual, and symbolism converge in tangible form, providing 
+        insight into Delta tribal cosmology and ceremonial aesthetics. The fragment exemplifies 
+        the integration of material, symbolic, and performative dimensions in pre-modern ritual culture.
+      </p>
+      <p>
+        By contextualizing this mask fragment, the exhibit underscores the enduring human 
+        impulse to externalize spiritual beliefs through artistic expression. Visitors are 
+        invited to reflect on the continuity of ritual, craftsmanship, and cultural memory, 
+        seeing in this fragment the confluence of identity, artistry, and sacred practice 
+        that transcends centuries.
+      </p>
+    </div>
+  </article>
+
+  <p><a href="collections.html">Return to Collections</a></p>
+</section>
   </main>
 
+  <!-- Popup Modal -->
+  <div id="popup-modal" class="popup-modal">
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Close">&times;</button>
+      <h2 id="popup-title"></h2>
+      <p id="popup-text"></p>
+    </div>
+  </div>
+
   <footer class="ai-note" role="contentinfo">
-    <p>
-      AI contributions: Images.
-    </p>
+    <p>AI contributions: Images.</p>
   </footer>
 
-  <script>
-    function showSection(sectionId, btn) {
-      const sections = document.querySelectorAll('.collection-section');
-      sections.forEach(s => s.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
+<script>
+  // Section toggle
+  function showSection(sectionId, btn) {
+    const sections = document.querySelectorAll('.collection-section');
+    sections.forEach(s => s.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
 
-      // Update buttons aria-expanded and active class
-      const buttons = document.querySelectorAll('.sub-nav button');
-      buttons.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-expanded', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-expanded', 'true');
+    const buttons = document.querySelectorAll('.sub-nav button');
+    buttons.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-expanded', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+
+  // Popup modal JS
+  const modal = document.getElementById('popup-modal');
+  const modalTitle = document.getElementById('popup-title');
+  const modalText = document.getElementById('popup-text');
+  const closeBtn = modal.querySelector('.popup-close');
+  const historySection = document.getElementById('histories');
+
+  document.querySelectorAll('.open-modal').forEach(img => {
+    img.addEventListener('click', () => {
+      modalTitle.textContent = img.dataset.title;
+      // Show image + content + interpretation
+      modalText.innerHTML = `
+        <img src="${img.src}" alt="${img.alt}" style="width:100%; margin-bottom:1rem; border-radius:5px;">
+        <p>${img.dataset.content}</p>
+      `;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      // Update Histories section dynamically
+      const historyContent = historySection.querySelector('#history-content') 
+                             || (() => {
+                                const div = document.createElement('div');
+                                div.id = 'history-content';
+                                historySection.appendChild(div);
+                                return div;
+                              })();
+      historyContent.innerHTML = `<p><strong>${img.dataset.title} Interpretation:</strong> ${img.dataset.content}</p>`;
+    });
+
+    // Keyboard accessibility: open modal with Enter or Space
+    img.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        img.click();
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
     }
-  </script>
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
 </body>
 </html>
